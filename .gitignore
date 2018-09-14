@@ -1,0 +1,7 @@
+.bundle/
+.kitchen/
+.terraform/
+terraform.tfstate.d/
+vendor/
+terraform.tfstate*
+.terraform*

@@ -1,0 +1,17 @@
+driver:
+    name: 'terraform'
+    command_timeout: 2000
+    root_module_directory: 'test/test_fixture'
+    variable_files: ['test/test_fixture/variables.tf']
+
+provisioner:
+    name: 'terraform'
+
+platforms:
+    - name: 'aws'
+
+verifier:
+    name: 'awspec'
+
+suites:
+    - name: 'default'
