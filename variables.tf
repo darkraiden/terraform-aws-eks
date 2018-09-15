@@ -15,12 +15,6 @@ variable "vpc_instance_tenancy" {
   description = "The instance tenancy mode for the VPC - 'default' or 'dedicated' accepted only"
 }
 
-## Tags
-variable "vpc_tags" {
-  description = "Additional tags for the VPC"
-  default     = {}
-}
-
 variable "public_subnets_count" {
   default = 3
 }
@@ -29,7 +23,23 @@ variable "private_subnets_count" {
   default = 3
 }
 
-variable "eks_tags" {
+## Tags
+variable "vpc_tags" {
+  description = "Additional tags for the VPC"
+  default     = {}
+}
+
+variable "private_subnets_tags" {
+  description = "Additional tags for the Private Subnets"
+  default = {}
+}
+
+variable "public_subnets_tags" {
+  description = "Additional tags for the Public Subnets"
+  default = {}
+}
+
+variable "eks_sg_tags" {
   description = "A map of tags to add to all resources"
   default     = {}
 }
