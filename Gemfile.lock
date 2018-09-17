@@ -736,7 +736,7 @@ GEM
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
     rubyntlm (0.6.2)
-    rubyzip (1.2.1)
+    rubyzip (1.2.2)
     semverse (2.0.0)
     sslshake (1.2.0)
     term-ansicolor (1.6.0)
@@ -789,6 +789,7 @@ DEPENDENCIES
   kitchen-terraform (~> 3.1)!
   kitchen-verifier-awspec (~> 0.1.1)!
   rhcl (~> 0.1.0)!
+  rubyzip (~> 1.2.2)!
 
 RUBY VERSION
    ruby 2.4.2p198

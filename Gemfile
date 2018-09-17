@@ -8,4 +8,5 @@ source 'https://rubygems.org/' do
   gem 'kitchen-terraform', '~> 3.1'
   gem 'kitchen-verifier-awspec', '~> 0.1.1'
   gem 'rhcl', '~> 0.1.0'
+  gem 'rubyzip', '~> 1.2.2'
 end
