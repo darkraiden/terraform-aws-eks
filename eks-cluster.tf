@@ -12,7 +12,7 @@ resource "aws_security_group" "eks_sg" {
   tags = "${
     merge(
       map("Name", format("%s-eks-sg", var.eks_name)),
-      var.eks_tags
+      var.eks_sg_tags
     )
   }"
 }

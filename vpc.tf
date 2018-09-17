@@ -29,7 +29,8 @@ resource "aws_subnet" "public_subnet" {
   tags = "${
     merge(
       map("Name", format("%s-public-subnet-%d", var.eks_name, count.index)),
-      map(format("kubernetes.io/cluster/%s", var.eks_name), "shared")
+      map(format("kubernetes.io/cluster/%s", var.eks_name), "shared"),
+      var.public_subnets_tags
     )
   }"
 }
@@ -44,7 +45,8 @@ resource "aws_subnet" "private_subnet" {
   tags = "${
     merge(
       map("Name", format("%s-private-subnet-%d", var.eks_name, count.index)),
-      map(format("kubernetes.io/cluster/%s", var.eks_name), "shared")
+      map(format("kubernetes.io/cluster/%s", var.eks_name), "shared"),
+      var.private_subnets_tags
     )
   }"
 }

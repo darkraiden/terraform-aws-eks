@@ -13,7 +13,7 @@ module "eks" {
   alarm_out_threshold   = 50
   alarm_in_threshold    = 30
 
-  eks_tags = {
+  eks_sg_tags = {
     test        = "this-is-a-test-tag"
     Description = "Managed by Terraform"
   }
