@@ -31,12 +31,12 @@ variable "vpc_tags" {
 
 variable "private_subnets_tags" {
   description = "Additional tags for the Private Subnets"
-  default = {}
+  default     = {}
 }
 
 variable "public_subnets_tags" {
   description = "Additional tags for the Public Subnets"
-  default = {}
+  default     = {}
 }
 
 variable "eks_sg_tags" {
@@ -259,6 +259,11 @@ variable "workers_key_name" {
 
 variable "workers_custom_user_data" {
   description = "A custom user data script to be attached to the Worker Nodes Launch Configuration"
+  default     = ""
+}
+
+variable "workers_extend_user_data" {
+  description = "Additional script to be appended to the Worker Nodes templated user data"
   default     = ""
 }
 

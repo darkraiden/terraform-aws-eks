@@ -144,6 +144,8 @@ resource "aws_launch_configuration" "workers_launch_configuration" {
   user_data = "${
     var.workers_custom_user_data != ""
       ? var.workers_custom_user_data
+      : var.workers_extend_user_data != ""
+      ? format("%s\n%s", data.template_file.init.rendered, var.workers_extend_user_data)
       : data.template_file.init.rendered
   }"
 
