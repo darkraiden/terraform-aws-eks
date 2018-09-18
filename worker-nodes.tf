@@ -141,12 +141,14 @@ resource "aws_launch_configuration" "workers_launch_configuration" {
   key_name        = "${var.workers_key_name}"
   security_groups = ["${aws_security_group.workers_sg.id}"]
 
-  user_data = "${
-    var.workers_custom_user_data != ""
-      ? var.workers_custom_user_data
-      : var.workers_extend_user_data != ""
-      ? format("%s\n%s", data.template_file.init.rendered, var.workers_extend_user_data)
-      : data.template_file.init.rendered
+  user_data_base64 = "${
+    base64encode(
+      var.workers_custom_user_data != ""
+        ? var.workers_custom_user_data
+        : var.workers_extend_user_data != ""
+          ? format("%s\n%s", data.template_file.init.rendered, var.workers_extend_user_data)
+          : data.template_file.init.rendered
+    )
   }"
 
   iam_instance_profile = "${aws_iam_instance_profile.workers_instance_profile.id}"
