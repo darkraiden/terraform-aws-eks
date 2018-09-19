@@ -8,7 +8,7 @@ module "eks" {
   vpc_cidr_block       = "10.0.0.0/16"
   vpc_instance_tenancy = "default"
 
-  workers_ami_id        = "ami-dea4d5a1"
+  workers_ami_id        = "ami-0440e4f6b9713faf6"
   workers_instance_type = "t2.small"
   alarm_out_threshold   = 50
   alarm_in_threshold    = 30
