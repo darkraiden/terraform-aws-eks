@@ -15,3 +15,7 @@ verifier:
 
 suites:
     - name: 'default'
+      verifier:
+          name: 'awspec'
+          patterns:
+              - 'test/integration/default/test_vpc.rb'
